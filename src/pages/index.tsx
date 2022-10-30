@@ -24,13 +24,13 @@ export const Home: NextPage = () => {
 
       <main>
         <Container maxWidth='lg'>
-          <Typography variant='h2' component='h1'>
+          <Typography variant='h2' component='h1' role='heading'>
             Hello world, tudu tudu
           </Typography>
 
-          <Button variant='contained' component={Link} noLinkStyle href='/'>
+          {/* <Button variant='contained' component={Link} noLinkStyle href='/'>
             Button
-          </Button>
+          </Button> */}
           <FormControl component='fieldset'>
             <FormLabel component='legend'>List of my tudus</FormLabel>
             <FormGroup aria-label='position' row>
