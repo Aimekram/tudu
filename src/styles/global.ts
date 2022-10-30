@@ -1,7 +1,7 @@
-import { Theme } from '@mui/material';
+import { Theme } from '@mui/material/styles/createTheme';
 
 export default (theme: Theme) => ({
   body: {
-    backgroundColor: theme.palette.secondary.main,
+    // backgroundColor: theme.palette.common.black,
   },
 });
