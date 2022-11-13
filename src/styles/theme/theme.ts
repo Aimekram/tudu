@@ -2,10 +2,10 @@ import createTheme from '@mui/material/styles/createTheme';
 import { red } from '@mui/material/colors';
 
 const colors = {
-  first: '#2a2438',
-  second: '#352f44',
-  third: '#5c5470',
-  fourth: '#dbd8e3',
+  first: '#170f22',
+  second: '#44318d',
+  third: '#91315e',
+  fourth: '#eaebed',
 };
 
 const theme = createTheme({

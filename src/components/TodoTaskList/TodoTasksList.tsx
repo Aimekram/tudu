@@ -5,7 +5,7 @@ import * as S from './styles';
 export const TodoTasksList = () => {
   return (
     <>
-      <S.ListTitle variant='h1'>List of my todos:</S.ListTitle>
+      <S.ListTitle variant='h1'>List of my todos</S.ListTitle>
       <List component='ol'>
         <TodoTask text='Hey 1' createdAt='2022-10-30' />
         <TodoTask text='Hey 2' createdAt='2022-10-30' />
