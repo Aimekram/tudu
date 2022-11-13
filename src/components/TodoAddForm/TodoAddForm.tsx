@@ -1,13 +1,18 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Button, TextField } from '@mui/material';
 
 const DEFAULT_TASK = '';
 
-export const TodoAddForm = () => {
+type Props = {
+  addTask: (content: string) => void;
+};
+
+export const TodoAddForm = ({ addTask }: Props) => {
   const [newTask, setNewTask] = useState(DEFAULT_TASK);
 
-  const handleSubmit = () => {
-    console.log(newTask);
+  const handleSubmit = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    addTask(newTask);
     setNewTask(DEFAULT_TASK);
   };
 
