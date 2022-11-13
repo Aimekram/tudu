@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import { Button, TextField } from '@mui/material';
 
-const DEFAULT_TASK = '';
+const INITIAL_TASK = '';
 
 type Props = {
   addTask: (content: string) => void;
 };
 
 export const TodoAddForm = ({ addTask }: Props) => {
-  const [newTask, setNewTask] = useState(DEFAULT_TASK);
+  const [newTask, setNewTask] = useState(INITIAL_TASK);
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     addTask(newTask);
-    setNewTask(DEFAULT_TASK);
+    setNewTask(INITIAL_TASK);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,7 +30,7 @@ export const TodoAddForm = ({ addTask }: Props) => {
         fullWidth
         margin='normal'
       />
-      <Button type='submit' variant='contained'>
+      <Button type='submit' variant='contained' disabled={!newTask.length}>
         Add task
       </Button>
     </form>
