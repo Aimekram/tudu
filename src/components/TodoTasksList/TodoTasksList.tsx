@@ -1,16 +1,21 @@
-import { List } from '@mui/material';
+import { List, Typography } from '@mui/material';
+import { Task } from 'pages/todo';
 import { TodoTask } from '../TodoTask/TodoTask';
-import * as S from './styles';
 
-export const TodoTasksList = () => {
+type Props = {
+  tasks: Task[];
+};
+
+export const TodoTasksList = ({ tasks }: Props) => {
+  if (!tasks.length) {
+    return <Typography>No tasks found</Typography>;
+  }
+
   return (
-    <>
-      <S.ListTitle variant='h1'>List of my todos</S.ListTitle>
-      <List component='ol'>
-        <TodoTask text='Hey 1' createdAt='2022-10-30' />
-        <TodoTask text='Hey 2' createdAt='2022-10-30' />
-        <TodoTask text='Hey 3' createdAt='2022-10-30' />
-      </List>
-    </>
+    <List component='ol'>
+      {tasks.map(({ id, content }) => (
+        <TodoTask key={id} text={content} createdAt='2022-10-30' />
+      ))}
+    </List>
   );
 };
